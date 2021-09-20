@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Threading.Tasks;
 using RaceWinners.Models;
 
@@ -19,7 +20,22 @@ namespace RaceWinners
                 Name = "Class A",
                 Ranks = new List<int> {4, 9, 11, 12}  // etc
             });
-
+            groups.Add(new Group
+            {
+                Name = "Class B",
+                Ranks = new List<int> {4, 9, 11, 12}  // etc
+            });
+            groups.Add(new Group
+            {
+                Name = "Class C",
+                Ranks = new List<int> {4, 9, 11, 12}  // etc
+            });
+            groups.Add(new Group
+            {
+                Name = "Class D",
+                Ranks = new List<int> {4, 9, 11, 12}
+            });
+                
             return groups;
         }
     }

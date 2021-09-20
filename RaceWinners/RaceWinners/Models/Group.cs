@@ -16,5 +16,7 @@ namespace RaceWinners.Models
         /// group placed 4th overall.  
         /// </summary>
         public List<int> Ranks { get; set; }
+
+        
     }
 }

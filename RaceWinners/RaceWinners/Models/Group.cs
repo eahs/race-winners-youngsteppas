@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Dynamic;
 
 namespace RaceWinners.Models
 {
@@ -16,6 +17,20 @@ namespace RaceWinners.Models
         /// group placed 4th overall.  
         /// </summary>
         public List<int> Ranks { get; set; }
+        
+        public int GroupRank
+        {
+            get
+            {
+                int sum = 0;
+                for (int i = 0; i < Ranks.Count; i++)
+                {
+                    sum = (75 - Ranks[i]);
+                }
+                return sum;                
+            }
+
+        }
 
         
     }

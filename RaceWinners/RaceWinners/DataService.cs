@@ -35,7 +35,7 @@ namespace RaceWinners
                 Name = "Class D",
                 Ranks = new List<int> {4, 9, 11, 12}
             });
-                
+            
             return groups;
         }
     }

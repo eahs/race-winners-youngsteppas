@@ -16,9 +16,23 @@ namespace RaceWinners
             {
                 // Combine the ranks to print as a list
                 var ranks = String.Join(", ", data[i].Ranks);
-                
+
                 Console.WriteLine($"{data[i].Name} - [{ranks}]");
             }
+
+            for (int i = 1; i <= data.Count; i++)
+            {
+                int hold = 0;
+                if (data[i - 1].GroupRank > data[i].GroupRank)
+                {
+                    hold = data[i].GroupRank;
+                    data[i].GroupRank = data[i - 1].GroupRank;
+                    data[i - 1].GroupRank = hold;
+                }
+            }
+            Console.WriteLine($"{data[3].GroupRank}");
+            
+            
         }
     }
 }

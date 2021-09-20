@@ -27,7 +27,7 @@ namespace RaceWinners.Models
                 {
                     sum = (75 - Ranks[i]);
                 }
-                return sum;                
+                return (sum / Ranks.Count);                
             }
 
         }

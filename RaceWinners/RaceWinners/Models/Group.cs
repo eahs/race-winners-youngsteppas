@@ -19,6 +19,8 @@ namespace RaceWinners.Models
         /// </summary>
         public List<int> Ranks { get; set; }
         
+        
+        //Calculates Group Rank by assigning point value to each position in race and averaging
         public int GroupRank
         {
             get

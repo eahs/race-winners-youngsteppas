@@ -22,37 +22,33 @@ namespace RaceWinners
                 Console.WriteLine($"{data[i].Name} - [{ranks}]");
             }
             
+            //Displays Group Ranks for all Groups
             Console.WriteLine($"A score:{data[0].GroupRank}");
             Console.WriteLine($"B score:{data[1].GroupRank}");
             Console.WriteLine($"C score:{data[2].GroupRank}");
             Console.WriteLine($"D score:{data[3].GroupRank}");
-
-            /*for (int i = 1; i <= data.Count; i++)
-            {
-                int hold = 0;
-                if (data[i - 1].GroupRank > data[i].GroupRank)
-                {
-                    hold = data[i].GroupRank;
-                    data[i].GroupRank = data[i - 1].GroupRank;
-                    data[i - 1].GroupRank = hold;
-                }
-            } */
             
+            //Insertion sort algorithm to rank each Group
+            Group hold;
+            int j;
             for (int i = 1; i < data.Count; i++)
             {
-                Group hold;
-                if (data[i - 1].GroupRank > data[i].GroupRank)
+                hold = data[i];
+                j = i - 1;
+                while (j >= 0 && (data[j].GroupRank > hold.GroupRank))
                 {
-                    hold = data[i];
-                    data[i] = data[i - 1];
-                    data[i - 1] = hold;
+                    data[j + 1] = data[j];
+                    j = j - 1;
                 }
+
+                data[j + 1] = hold;
             }
             
-            Console.WriteLine($"4th place:{data[0].GroupRank}");
-            Console.WriteLine($"3rd place:{data[1].GroupRank}");
-            Console.WriteLine($"2nd place:{data[2].GroupRank}");
-            Console.WriteLine($"1st place:{data[3].GroupRank}");
+            //Write sorted Groups to console
+            Console.WriteLine($"4th place:{data[0].Name}, {data[0].GroupRank}");
+            Console.WriteLine($"3rd place:{data[1].Name}, {data[1].GroupRank}");
+            Console.WriteLine($"2nd place:{data[2].Name}, {data[2].GroupRank}");
+            Console.WriteLine($"1st place:{data[3].Name}, {data[3].GroupRank}");
             
             
             
